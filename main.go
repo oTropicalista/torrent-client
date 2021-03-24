@@ -1,7 +1,22 @@
 package main
 
-import "fmt"
+// TODO
+// - abrir .torrent
+// - baixar e madnar para arquivo
+
+import (
+	"log"
+	"os"
+
+	"github.com/oTropicalista/torrent-client/torrentfile"
+)
 
 func main() {
-	fmt.Println("ola mundo")
+	inPath := os.Args[1]
+	outPath := os.Args[2]
+
+	tf, err := torrentfile.Open(inPath)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
